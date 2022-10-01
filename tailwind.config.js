@@ -12,7 +12,10 @@ module.exports = {
       colors: {
         "moderate-cyan": ' hsl(176, 50%, 47%)',
         "dark-cyan": 'hsl(176, 72%, 28%)',
-        "Dark-gray": 'hsl(0, 0%, 48%)'
+        "dark-gray": 'hsl(0, 0%, 48%)'
+      },
+      backgroundImage: {
+        // 'hero-mobile': "url('./src/assets/image-hero-mobile.jpg')"
       }
     }
   },
