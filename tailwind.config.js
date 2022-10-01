@@ -14,9 +14,6 @@ module.exports = {
         "dark-cyan": 'hsl(176, 72%, 28%)',
         "dark-gray": 'hsl(0, 0%, 48%)'
       },
-      backgroundImage: {
-        // 'hero-mobile': "url('./src/assets/image-hero-mobile.jpg')"
-      }
     }
   },
   plugins: [],
