@@ -1,11 +1,10 @@
-import { Header, Main, Footer } from './components'
+import { Header, Main } from './components'
 
 function App() {
   return (
-    <div className="font-sans font-medium bg-slate-100">
+    <div className="font-sans font-medium bg-slate-100 ">
       <Header />
       <Main />
-      <Footer />
     </div>
   );
 }

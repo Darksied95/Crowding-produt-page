@@ -1,9 +1,11 @@
 import bookmarkIcon from "../../assets/icon-bookmark.svg";
 import mastercraft from "../../assets/logo-mastercraft.svg";
+import Cards from "./Cards";
+import MainModal from "../Modals/MainModal/MainModal";
 const main = () => {
   return (
     <div>
-      <section className="relative bg-white w-[90vw] mx-auto -mt-10 rounded-md">
+      <section className="relative bg-white w-[90vw] max-w-[700px] mx-auto -mt-10 rounded-md">
         <img
           src={mastercraft}
           alt="mastercraft logo"
@@ -31,7 +33,7 @@ const main = () => {
           </div>
         </div>
       </section>
-      <section className="bg-white w-[90vw] mx-auto mt-4 px-6 pb-px">
+      <section className="bg-white w-[90vw] max-w-[700px] mx-auto mt-4 px-6 pb-px">
         <div className="py-px sm:flex sm:justify-around">
           <div className="mt-8 mb-5 sm:w-1/3 sm:border-r-2 sm:mt-5">
             <h2 className="font-bold text-2xl text-center">$89,914</h2>
@@ -55,7 +57,7 @@ const main = () => {
           <div className="absolute bottom-0 left-0 h-2.5 w-[26%] rounded-md bg-moderate-cyan  z-10"></div>
         </div>
       </section>
-      <section className="bg-white w-[90vw] mx-auto mt-4 px-6 py-px">
+      <section className="bg-white w-[90vw]  max-w-[700px] mx-auto mt-4 px-6 py-px">
         <h1 className="font-bold my-6 mt-8">About this project</h1>
         <p className="text-gray-400 text-sm font-medium mb-6">
           The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform
@@ -69,29 +71,9 @@ const main = () => {
           extra desk space below your computer to allow notepads, pens, and USB
           sticks to be stored under the stand.
         </p>
-        <div className="border-2 border-gray-300  rounded-lg p-6">
-          <div className="sm:flex justify-between">
-            <h1 className="font-bold mb-1">Bamboo Stand</h1>
-            <h2 className="text-moderate-cyan font-meduim mb-4">
-              Pledge $25 or more
-            </h2>
-          </div>
-          <p className="text-gray-400 text-sm font-medium mb-6">
-            You get an ergonomic stand made of natural bamboo. You've helped us
-            launch our promotional campaign, and you'll be added to a special
-            Backer member list.
-          </p>
-          <div className="sm:flex justify-between">
-            <div className="flex items-center gap-1">
-              <h3 className="font-bold text-3xl">101</h3>
-              <span className="text-gray-400 text-sm font-medium">left</span>
-            </div>
-            <button className="bg-moderate-cyan px-8 py-3 mt-6 rounded-[2em] text-white text-sm">
-              Select Reward
-            </button>
-          </div>
-        </div>
+        <Cards />
       </section>
+      <MainModal />
     </div>
   );
 };
