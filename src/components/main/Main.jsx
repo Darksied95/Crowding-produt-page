@@ -1,8 +1,10 @@
+import { useState } from "react";
 import Cards from "./Cards";
 import MainModal from "../Modals/MainModal/MainModal";
 import bookmarkIcon from "../../assets/icon-bookmark.svg";
 import mastercraft from "../../assets/logo-mastercraft.svg";
-const main = () => {
+const Main = () => {
+  const [showMainModal, setShowMainModal] = useState(false);
   return (
     <div>
       <section className="relative bg-white w-[90vw] max-w-[700px] mx-auto -mt-10 rounded-md">
@@ -25,7 +27,11 @@ const main = () => {
             </button>
 
             <div className="flex">
-              <img src={bookmarkIcon} alt=" bookmark icon" className="z-10" />
+              <img
+                src={bookmarkIcon}
+                alt=" bookmark icon"
+                className="z-10 fill-red-600"
+              />
               <p className="hidden sm:block bg-gray-300 rounded-3xl py-3.5 pl-10 pr-6 -ml-9 self-center text-sm">
                 Bookmark
               </p>
@@ -71,11 +77,11 @@ const main = () => {
           extra desk space below your computer to allow notepads, pens, and USB
           sticks to be stored under the stand.
         </p>
-        <Cards />
+        <Cards setShowMainModal={setShowMainModal} />
       </section>
-      <MainModal />
+      {showMainModal && <MainModal setShowMainModal={setShowMainModal} />}
     </div>
   );
 };
 
-export default main;
+export default Main;

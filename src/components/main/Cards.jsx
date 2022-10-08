@@ -2,13 +2,17 @@ import React from "react";
 import Card from "./Card";
 import article from "../../assets/articles.json";
 
-const Cards = () => {
+const Cards = ({ setShowMainModal }) => {
   return (
     <>
       {article
         .filter((each) => each.modalOnly !== true)
         .map((each) => (
-          <Card {...each} key={each.heading} />
+          <Card
+            {...each}
+            key={each.heading}
+            setShowMainModal={setShowMainModal}
+          />
         ))}
     </>
   );
