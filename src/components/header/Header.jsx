@@ -1,11 +1,13 @@
+import { useState } from "react";
 import heroImage from "../../assets/logo.svg";
 import hamburger from "../../assets/icon-hamburger.svg";
 import closeIcon from "../../assets/icon-close-menu.svg";
 import HeaderModal from "../Modals/HeaderModal";
-const header = () => {
+const Header = () => {
+  const [showHeaderModal, setShowHeaderModal] = useState(false);
   return (
     <header className="bg-[url('/public/images/image-hero-mobile.jpg')] h-80 bg-cover sm:bg-[url('/public/images/image-hero-desktop.jpg')]">
-      <HeaderModal />
+      {showHeaderModal && <HeaderModal />}
       <div className="flex justify-between p-4">
         <a href="/">
           <img src={heroImage} alt="computer" />
@@ -21,11 +23,23 @@ const header = () => {
             <a href="/">Get Started</a>
           </li>
         </ul>
-        <img src={hamburger} alt="hamburger icon" className="sm:hidden" />
-        <img src={closeIcon} alt="close icon" className="hidden" />
+        {!showHeaderModal ? (
+          <img
+            src={hamburger}
+            alt="hamburger icon"
+            className="sm:hidden"
+            onClick={() => setShowHeaderModal(true)}
+          />
+        ) : (
+          <img
+            src={closeIcon}
+            alt="close icon"
+            onClick={() => setShowHeaderModal(false)}
+          />
+        )}
       </div>
     </header>
   );
 };
 
-export default header;
+export default Header;

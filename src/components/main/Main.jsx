@@ -1,7 +1,7 @@
-import bookmarkIcon from "../../assets/icon-bookmark.svg";
-import mastercraft from "../../assets/logo-mastercraft.svg";
 import Cards from "./Cards";
 import MainModal from "../Modals/MainModal/MainModal";
+import bookmarkIcon from "../../assets/icon-bookmark.svg";
+import mastercraft from "../../assets/logo-mastercraft.svg";
 const main = () => {
   return (
     <div>
