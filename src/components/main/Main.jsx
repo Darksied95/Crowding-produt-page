@@ -20,7 +20,7 @@ const main = () => {
             strain.
           </p>
           <div className="flex mt-4 justify-between">
-            <button className="bg-moderate-cyan px-14 py-1 rounded-[2em] text-white text-sm">
+            <button className="bg-moderate-cyan px-14 py-1 rounded-[2em] text-white text-sm hover:bg-dark-cyan">
               Back this project
             </button>
 

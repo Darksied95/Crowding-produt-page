@@ -7,11 +7,19 @@ const header = () => {
     <header className="bg-[url('/public/images/image-hero-mobile.jpg')] h-80 bg-cover sm:bg-[url('/public/images/image-hero-desktop.jpg')]">
       <HeaderModal />
       <div className="flex justify-between p-4">
-        <img src={heroImage} alt="computer" />
+        <a href="/">
+          <img src={heroImage} alt="computer" />
+        </a>
         <ul className="text-white hidden sm:flex gap-6 mr-32">
-          <li>About</li>
-          <li>Discover</li>
-          <li>Get Started</li>
+          <li>
+            <a href="/">About</a>
+          </li>
+          <li>
+            <a href="/">Discover</a>
+          </li>
+          <li>
+            <a href="/">Get Started</a>
+          </li>
         </ul>
         <img src={hamburger} alt="hamburger icon" className="sm:hidden" />
         <img src={closeIcon} alt="close icon" className="hidden" />
