@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import articles from "../../../assets/articles.json";
 import Card from "./Card";
 
-const Cards = () => {
-  let activeCardArray = Array(articles.length).fill(false);
+const Cards = ({ increaseBackers, increaseAmount, finished }) => {
+  const activeCardArray = Array(articles.length).fill(false);
   const [activeCard, setActiveCard] = useState(activeCardArray);
+
   function handleClick(index) {
     let arr = [...activeCardArray];
     arr[index] = true;
@@ -19,7 +20,10 @@ const Cards = () => {
           index={index}
           activeCard={activeCard}
           setActiveCard={setActiveCard}
-          onClick={handleClick}
+          increaseAmount={increaseAmount}
+          increaseBackers={increaseBackers}
+          handleLabelClick={handleClick}
+          finished={finished}
         />
       ))}
     </>

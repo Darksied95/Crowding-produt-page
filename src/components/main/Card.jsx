@@ -4,9 +4,7 @@ const Card = ({ heading, price, article, setShowMainModal }) => {
   return (
     <div className="border-2 border-gray-300  rounded-lg p-6 mb-8">
       <div className="sm:flex justify-between">
-        <h1 className="font-bold mb-1">
-          <a href="/">{heading}</a>
-        </h1>
+        <h1 className="font-bold mb-1">{heading}</h1>
         <h2 className="text-moderate-cyan font-meduim mb-4">
           {`Pledge $${price} or more`}
         </h2>

@@ -6,17 +6,31 @@ const Card = ({
   price,
   index,
   activeCard,
-  setActiveCard,
-  onClick,
+  handleLabelClick,
+  increaseBackers,
+  increaseAmount,
+  finished,
 }) => {
+  function handleClick(price) {
+    price = price || 0;
+    increaseBackers();
+    increaseAmount(+price);
+  }
+
+  function handleContinue(price, e) {
+    console.log(e.target);
+    handleClick(price);
+    finished();
+  }
+
   return (
-    <label
+    <div
       className={
         activeCard[index]
           ? `border-moderate-cyan border-2  rounded-lg p-6 mb-8 block`
           : `border-gray-300 border-2  rounded-lg p-6 mb-8 block`
       }
-      onClick={() => onClick(index)}
+      onClick={() => handleLabelClick(index)}
     >
       <div className="mb-7 relative">
         <span className="absolute top-4 inline-flex justify-center items-center w-6 h-6 rounded-full border border-gray-300">
@@ -54,12 +68,15 @@ const Card = ({
       )}
       {activeCard[index] && (
         <div className="border-t-2 mt-4 -mx-6 pt-3 pl-4 ">
-          <button className="bg-moderate-cyan px-8 py-3 mt-6 rounded-[2em] text-white text-sm  md:block md:ml-auto md:mr-6">
+          <button
+            className="bg-moderate-cyan px-8 py-3 mt-6 rounded-[2em] text-white text-sm  md:block md:ml-auto md:mr-6"
+            onClick={(e) => handleContinue(price, e)}
+          >
             Continue
           </button>
         </div>
       )}
-    </label>
+    </div>
   );
 };
 
