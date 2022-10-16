@@ -5,10 +5,17 @@ import BookmarkSvg from "./../../assets/BookmarkSvg";
 import mastercraft from "../../assets/logo-mastercraft.svg";
 
 const Main = ({ setShowMainModal, showMainModal }) => {
+  let remainingAmount = {
+    $25: 160,
+    $75: 82,
+    $200: 0,
+  };
+
   const [amountInString, setAmountInString] = useState("89,900");
   const [amountInPercentage, setAmountInPercentage] = useState(89.9);
   const [backers, setBackers] = useState("5,007");
   const [bookmarked, setBookmarked] = useState(false);
+  const [remaining, setRemaining] = useState(remainingAmount);
 
   function increaseAmount(amount) {
     let totalAmount = +amountInString.replace(/,/g, "");
@@ -34,9 +41,13 @@ const Main = ({ setShowMainModal, showMainModal }) => {
 
   function handleBookmarked() {
     setBookmarked(!bookmarked);
-    console.log(bookmarked);
   }
 
+  function decreaseRemainder(price) {
+    const arr = remaining;
+    arr["$" + price]--;
+    setRemaining(arr);
+  }
   useEffect(() => {
     let totalAmount = +amountInString.replace(/,/g, "");
     let percentage = (totalAmount / 100000) * 100;
@@ -125,13 +136,15 @@ const Main = ({ setShowMainModal, showMainModal }) => {
           extra desk space below your computer to allow notepads, pens, and USB
           sticks to be stored under the stand.
         </p>
-        <Cards showModal={showModal} />
+        <Cards showModal={showModal} remaining={remaining} />
       </section>
       {showMainModal && (
         <MainModal
           onHide={hideModal}
+          remaining={remaining}
           increaseAmount={increaseAmount}
           increaseBackers={increaseBackers}
+          decreaseRemainder={decreaseRemainder}
         />
       )}
     </div>

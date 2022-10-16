@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import articles from "../../../assets/articles.json";
 import Card from "./Card";
 
-const Cards = ({ increaseBackers, increaseAmount, finished }) => {
+const Cards = ({
+  increaseBackers,
+  remaining,
+  increaseAmount,
+  finished,
+  decreaseRemainder,
+}) => {
   const activeCardArray = Array(articles.length).fill(false);
   const [activeCard, setActiveCard] = useState(activeCardArray);
 
@@ -24,6 +30,8 @@ const Cards = ({ increaseBackers, increaseAmount, finished }) => {
           increaseBackers={increaseBackers}
           handleLabelClick={handleClick}
           finished={finished}
+          remaining={remaining}
+          decreaseRemainder={decreaseRemainder}
         />
       ))}
     </>

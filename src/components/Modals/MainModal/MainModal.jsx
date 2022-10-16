@@ -3,7 +3,13 @@ import Cards from "./Cards";
 import FinishedModal from "./FinishedModal";
 import closeIcon from "../../../assets/icon-close-modal.svg";
 
-const MainModal = ({ onHide, increaseBackers, increaseAmount }) => {
+const MainModal = ({
+  onHide,
+  remaining,
+  increaseBackers,
+  increaseAmount,
+  decreaseRemainder,
+}) => {
   const [finished, setFinished] = useState(false);
 
   function setFinishedToTrue() {
@@ -35,6 +41,8 @@ const MainModal = ({ onHide, increaseBackers, increaseAmount }) => {
             increaseAmount={increaseAmount}
             increaseBackers={increaseBackers}
             finished={setFinishedToTrue}
+            remaining={remaining}
+            decreaseRemainder={decreaseRemainder}
           />
         </div>
       )}
