@@ -8,7 +8,7 @@ const Main = ({ setShowMainModal, showMainModal }) => {
   let remainingAmount = {
     $25: 160,
     $75: 82,
-    $200: 0,
+    $200: 1,
   };
 
   const [amountInString, setAmountInString] = useState("89,900");
