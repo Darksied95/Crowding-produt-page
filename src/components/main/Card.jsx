@@ -1,12 +1,9 @@
 import React from "react";
+import useSetRemainder from "../../Hooks/useSetRemainder";
 
 const Card = ({ heading, price, article, remaining, setShowMainModal }) => {
   const [inStock, setInStock] = React.useState(true);
-  React.useEffect(() => {
-    if (remaining["$" + price] <= 0) {
-      setInStock(false);
-    }
-  }, [remaining, price]);
+  useSetRemainder(remaining, price, setInStock);
 
   return (
     <div
