@@ -44,7 +44,7 @@ const Main = ({ setShowMainModal, showMainModal }) => {
   }
 
   function decreaseRemainder(price) {
-    const arr = remaining;
+    const arr = { ...remaining };
     arr["$" + price]--;
     setRemaining(arr);
   }
