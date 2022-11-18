@@ -78,7 +78,7 @@ const Main = ({ setShowMainModal, showMainModal }) => {
               Back this project
             </button>
 
-            <div className="flex" onClick={handleBookmarked}>
+            <div className="flex cursor-pointer" onClick={handleBookmarked}>
               <BookmarkSvg bookmarked={bookmarked} />
               {!bookmarked ? (
                 <p className="hidden sm:block bg-gray-300 rounded-3xl py-3.5 pl-10 pr-6 -ml-9 self-center text-sm">
