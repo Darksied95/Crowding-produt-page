@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Cards from "./Cards";
 import FinishedModal from "./FinishedModal";
 import closeIcon from "../../../assets/icon-close-modal.svg";
 import "./mainModal.css";
-import { useEffect } from "react";
 
 const MainModal = ({
   onHide,
@@ -33,7 +32,13 @@ const MainModal = ({
       {finished ? (
         <FinishedModal hideFinished={setFinishedToFalse} />
       ) : (
-        <div className="bg-white w-[90vw]  max-w-[700px] mx-auto mt-4 px-6 py-px rounded-lg absolute top-24 left-2/4 -translate-x-1/2 md:h-[1060px] z-20 mainModal">
+        <div
+          className={
+            finished
+              ? `bg-white w-[90vw] opacity-0 max-w-[700px] mx-auto mt-4 px-6 py-px rounded-lg absolute top-24 left-2/4 -translate-x-1/2 md:h-[1060px] z-20 mainModal`
+              : `bg-white w-[90vw] opacity-0 max-w-[700px] mx-auto mt-4 px-6 py-px rounded-lg absolute top-24 left-2/4 -translate-x-1/2 md:h-[1060px] z-20 mainModal`
+          }
+        >
           <header className="flex justify-between items-center mt-6 mb-4">
             <h1 className="font-bold ">Back this project</h1>
             <img

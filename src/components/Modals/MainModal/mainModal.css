@@ -1,5 +1,4 @@
 .mainModal {
-  color: green;
-  width: 100%;
-  transition: all 10s ease-in;
+  opacity: 1;
+  transition: opacity 5000ms ease-in-out;
 }
